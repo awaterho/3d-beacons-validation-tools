@@ -2,7 +2,7 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "validateEndpoint.js",
+  "main": "test",
   "dependencies": {
     "axios": "^0.20.0"
   },
