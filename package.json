@@ -1,8 +1,7 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "",
-  "main": "test",
+  "description": "Validate 3d-beacons Endpoint",
   "dependencies": {
     "axios": "^0.20.0"
   },
