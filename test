@@ -12,20 +12,21 @@ before(async function() {
 });
 
 // Or from file. Requires absolute path
-//chai.use(chaiResponseValidator('D:/code/api/3dbeacons_openapi.js.json'));
-
-describe('GET P60995.json', function() {
+//chai.use(chaiResponseValidator('/my/path/to/3dbeacons_openapi.js.json'));
+describe('GET P69905.json', function() {
   it('should satisfy OpenAPI spec', async function() {
-    const res = await axios.get('https://beta.swissmodel.expasy.org/3d-beacons/uniprot/P60995.json');
-    expect(res.status).to.equal(200);
-    expect(res).to.satisfyApiSpec;
+    const result = await axios.get('https://beta.swissmodel.expasy.org/3d-beacons/uniprot/summary/p69905.json?provider=swissmodel');
+    expect(result.data.structures.length).to.be.above(1);
+    expect(result.status).to.equal(200);
+    expect(result).to.satisfyApiSpec;
   });
 });
 
-describe('GET summary P60995.json', function() {
+describe('GET summary P69905.json', function() {
   it('should satisfy OpenAPI spec', async function() {
-    const res = await axios.get('https://beta.swissmodel.expasy.org/3d-beacons/uniprot/summary/P60995.json');
-    expect(res.status).to.equal(200);
-    expect(res).to.satisfyApiSpec;
+    const result = await axios.get('https://beta.swissmodel.expasy.org/3d-beacons/uniprot/summary/p69905.json?provider=swissmodel');
+    expect(result.status).to.equal(200);
+    expect(result.data.structures.length).to.be.above(1)
+    expect(result).to.satisfyApiSpec;
   });
 });
